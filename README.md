@@ -2,7 +2,7 @@
 
 # Problem statement
 
-commits to a git repo
+commits staged changes to a git repo
 
 # Format
 
@@ -32,8 +32,8 @@ op:
     authorName:
     message:
     # begin optional params
+    dotGitDir:
     noVerify:
-    repo:
     # end optional params
   outputs:
     repo:

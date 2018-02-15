@@ -1,13 +1,14 @@
 name: github.com/opspec-pkgs/git.commit
-description: commits to a git repo
+description: commits staged changes to a git repo
 inputs:
-  repo:
+  dotGitDir:
     dir:
-      description: repo to commit to
+      description: git repo .git directory
       default: .git
   authorName:
     string:
       description: commit authors name
+      constraints: { minLength: 1 }
   authorEmail:
     string:
       description: commit authors email address
@@ -30,7 +31,7 @@ run:
   container:
     cmd: [ /cmd.sh ]
     dirs:
-      /.git: $(repo)
+      /.git: $(dotGitDir)
     envVars:
       authorEmail:
       authorName:
