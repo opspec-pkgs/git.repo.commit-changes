@@ -2,7 +2,7 @@
 
 # Problem statement
 
-records changes (commits) to a git repo
+commits to a git repo
 
 # Format
 
@@ -28,7 +28,8 @@ opctl run github.com/opspec-pkgs/git.commit#1.0.0
 op:
   pkg: { ref: github.com/opspec-pkgs/git.commit#1.0.0 }
   inputs:
-    author:
+    authorEmail:
+    authorName:
     message:
     # begin optional params
     noVerify:

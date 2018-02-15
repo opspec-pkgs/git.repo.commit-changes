@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 
+git config --global user.email "$authorEmail"
+git config --global user.name "$authorName"
+
 gitCommitCmd='git commit'
-gitCommitCmd=$(printf "%s --message %s" "$gitCommitCmd" "$message")
-gitCommitCmd=$(printf "%s --author %s" "$gitCommitCmd" "$author")
+gitCommitCmd=$(printf "%s --message='%s'" "$gitCommitCmd" "$message")
 
 # handle opts
-if [ "$noVerify" != " " ]; then
+if [ "$noVerify" != "false" ]; then
 gitCommitCmd=$(printf "%s --no-verify %s" "$gitCommitCmd")
 fi
 

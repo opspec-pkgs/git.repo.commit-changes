@@ -1,13 +1,17 @@
 name: github.com/opspec-pkgs/git.commit
-description: records changes (commits) to a git repo
+description: commits to a git repo
 inputs:
   repo:
     dir:
-      description: repo to record changes to
+      description: repo to commit to
       default: .git
-  author:
+  authorName:
     string:
-      description: author in format `A U Thor <author@example.com>`
+      description: commit authors name
+  authorEmail:
+    string:
+      description: commit authors email address
+      constraints: { format: email }
   message:
     string:
       description: details about the commit
@@ -19,7 +23,7 @@ inputs:
 outputs:
   repo:
     dir:
-      description: repo with changes recorded
+      description: repo with the commit
       default: .git
 version: 1.0.0
 run:
@@ -28,7 +32,8 @@ run:
     dirs:
       /.git: $(repo)
     envVars:
-      author:
+      authorEmail:
+      authorName:
       message:
       noVerify:
     files:
