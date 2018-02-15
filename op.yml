@@ -1,0 +1,37 @@
+name: github.com/opspec-pkgs/git.commit
+description: records changes (commits) to a git repo
+inputs:
+  repo:
+    dir:
+      description: repo to record changes to
+      default: .git
+  author:
+    string:
+      description: author in format `A U Thor <author@example.com>`
+  message:
+    string:
+      description: details about the commit
+  noVerify:
+    string:
+      description: whether to skip pre-commit and commit-msg hooks
+      constraints: { enum: ['true', 'false']}
+      default: 'false'
+outputs:
+  repo:
+    dir:
+      description: repo with changes recorded
+      default: .git
+version: 1.0.0
+run:
+  container:
+    cmd: [ /cmd.sh ]
+    dirs:
+      /.git: $(repo)
+    envVars:
+      author:
+      message:
+      noVerify:
+    files:
+      /cmd.sh:
+    image: { ref: 'opspecpkgs/git.commit:1.0.0' }
+    workDir: /
