@@ -25,7 +25,6 @@ outputs:
   repo:
     dir:
       description: repo with the commit
-      default: .git
 version: 1.0.0
 run:
   container:
