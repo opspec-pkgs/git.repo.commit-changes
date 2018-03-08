@@ -1,4 +1,4 @@
-name: github.com/opspec-pkgs/git.commit
+name: github.com/opspec-pkgs/git.repo.commit-changes
 description: commits staged changes to a git repo
 inputs:
   dotGitDir:
@@ -25,7 +25,7 @@ outputs:
   repo:
     dir:
       description: repo with the commit
-version: 1.0.0
+version: 1.1.0
 run:
   container:
     cmd: [ /cmd.sh ]
@@ -38,5 +38,5 @@ run:
       noVerify:
     files:
       /cmd.sh:
-    image: { ref: 'opspecpkgs/git.commit:1.0.0' }
+    image: { ref: 'opspecpkgs/git.repo.commit-changes:1.1.0' }
     workDir: /
