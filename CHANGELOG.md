@@ -5,6 +5,12 @@ All notable changes will be documented in this file in accordance with
 
 ## \[Unreleased]
 
+## \[1.1.1] - 2018-07-02
+
+### Fixed
+
+- repo output should be named dotGitDir
+
 ## \[1.1.0] - 2018-03-07
 
 ### Added

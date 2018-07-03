@@ -8,42 +8,42 @@ commits staged changes to a git repo
 
 # Format
 
-this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+the op uses [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5) definition format
 
 # Example usage
 
 ## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/git.repo.commit-changes#1.1.0
+opctl op install github.com/opspec-pkgs/git.repo.commit-changes#1.1.1
 ```
 
 ## Run
 
 ```
-opctl run github.com/opspec-pkgs/git.repo.commit-changes#1.1.0
+opctl run github.com/opspec-pkgs/git.repo.commit-changes#1.1.1
 ```
 
 ## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/git.repo.commit-changes#1.1.0 }
+  ref: github.com/opspec-pkgs/git.repo.commit-changes#1.1.1
   inputs:
-    authorName:
     authorEmail:
+    authorName:
     message:
     # params w/ default
     dotGitDir:
     noVerify:
   outputs:
-    repo:
+    dotGitDir:
 ```
 
 # Support
 
 join us on
-[![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
+[![Slack](https://opctl-slackin.herokuapp.com/badge.svg)](https://opctl-slackin.herokuapp.com/)
 or
 [open an issue](https://github.com/opspec-pkgs/git.repo.commit-changes/issues)
 
